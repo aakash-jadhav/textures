@@ -9,8 +9,8 @@ export const PITCH_PBR_TEXTURES = {
   aoMap: `${PITCH_BASE}_AmbientOcclusion.png`,
 } as const
 
-/** Meters per texture tile (AmbientCG ground materials ~2 m). */
-export const PITCH_TEXTURE_TILE_SIZE = 2
+/** Meters per texture tile (aligned with outfield grass scale). */
+export const PITCH_TEXTURE_TILE_SIZE = 8
 
 export function pitchTextureRepeat(): { x: number; y: number } {
   return {

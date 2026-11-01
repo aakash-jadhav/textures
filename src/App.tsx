@@ -3,6 +3,7 @@ import { useEnvironment, useTexture } from '@react-three/drei'
 import { Suspense } from 'react'
 import { ACESFilmicToneMapping } from 'three'
 import { SceneContent } from './components/SceneContent'
+import { TextureSizePanel } from './components/TextureSizePanel'
 import { SKY_HDRI } from './constants/sky'
 import { GRASS_PBR_TEXTURES } from './utils/grassTexture'
 import { PITCH_PBR_TEXTURES } from './utils/pitchTexture'
@@ -15,20 +16,23 @@ useEnvironment.preload({ files: SKY_HDRI })
 
 function App() {
   return (
-    <Canvas
-      shadows
-      dpr={[1, 1.75]}
-      gl={{
-        antialias: true,
-        toneMapping: ACESFilmicToneMapping,
-        toneMappingExposure: 1.05,
-        powerPreference: 'high-performance',
-      }}
-    >
-      <Suspense fallback={null}>
-        <SceneContent />
-      </Suspense>
-    </Canvas>
+    <div className="app-viewport">
+      <TextureSizePanel />
+      <Canvas
+        shadows
+        dpr={[1, 2]}
+        gl={{
+          antialias: true,
+          toneMapping: ACESFilmicToneMapping,
+          toneMappingExposure: 1.05,
+          powerPreference: 'high-performance',
+        }}
+      >
+        <Suspense fallback={null}>
+          <SceneContent />
+        </Suspense>
+      </Canvas>
+    </div>
   )
 }
 

@@ -16,7 +16,7 @@ export const GRASS_PBR_TEXTURES = {
 } as const
 
 /** Approximate real-world size (m) represented by one texture repeat. */
-export const GRASS_TEXTURE_WORLD_SIZE = 1.15
+export const GRASS_TEXTURE_WORLD_SIZE = 8
 
 export function configureGrassTexture(
   map: THREE.Texture,

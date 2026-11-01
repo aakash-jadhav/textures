@@ -1,11 +1,12 @@
 import { Environment, PerspectiveCamera } from '@react-three/drei'
 import { useMemo } from 'react'
 import * as THREE from 'three'
-import { GROUND_RADIUS } from '../constants'
+import { GROUND_RADIUS, V1_DEFAULT_CAMERA } from '../constants'
 import { SKY_HDRI } from '../constants/sky'
 import { CricketOutfield } from './CricketOutfield'
 import { CricketPitch } from './CricketPitch'
 import { GrabCursorControls } from './GrabCursorControls'
+import { WicketsAtBothEnds } from './Wicket'
 
 export function SceneContent() {
   const sunDirection = useMemo(
@@ -19,8 +20,8 @@ export function SceneContent() {
     <>
       <PerspectiveCamera
         makeDefault
-        position={[48, 22, 52]}
-        fov={42}
+        position={V1_DEFAULT_CAMERA.position}
+        fov={V1_DEFAULT_CAMERA.fov}
         near={0.5}
         far={500}
       />
@@ -59,6 +60,7 @@ export function SceneContent() {
 
       <CricketOutfield />
       <CricketPitch />
+      <WicketsAtBothEnds />
     </>
   )
 }

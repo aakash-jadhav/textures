@@ -8,6 +8,19 @@ body,
   touch-action: none;
 }
 
+.app-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #b8d4ec;
+}
+
+.app-viewport canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 canvas {
   display: block;
 }
